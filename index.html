@@ -23,7 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
 <!--//fonts-->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <!-- banner -->
@@ -71,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			
 			<div class="banner-image-w3layouts">
-				<img src="images/img12.jpg" alt=" " class="img-responsive" />
+				<img src="images/imgnew.jpg" alt=" " class="img-responsive" />
 			</div>
 	</div>
 <!-- //banner -->
@@ -123,12 +123,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<h6>html<span> 100% </span></h6>
 							<div class="progress  w3-agile">
-								<div class="progress-bar progress-bar-striped active" style="width: 70%">
+								<div class="progress-bar progress-bar-striped active" style="width: 100%">
 								</div>
 							</div>
 							<h6>css<span>80% </span></h6>
 							<div class="progress  w3-agile">
-								<div class="progress-bar progress-bar-striped active" style="width: 90%">
+								<div class="progress-bar progress-bar-striped active" style="width: 80%">
 								</div>
 							</div>
 							<h6>javascript<span> 75% </span></h6>
@@ -289,7 +289,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="contact" id="contact">
 	<h3 class="w3_head w3_head1">Contact Me <span>Get in touch with me</span></h3>
 		<div class="col-md-12   contact-agileits-w3layouts">
-		<form action="#" method="post">
+		<form action=""  id="submit-form">
 				<input type="text" name="Your Name" placeholder="Name" required="">
 				<input type="email" name="Your Email" placeholder="Email" required="">
 				<input type="text" name="Phone Number" placeholder="Number" required="">
@@ -468,6 +468,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+<script>
+	$("#submit-form").submit((e)=>{
+		e.preventDefault()
+		$.ajax({
+			url:"https://script.google.com/macros/s/AKfycbx4B09emhcLQcyv4ZJBTiaVdGRrMtf4VvvSPDU_/exec",
+			data:$("#submit-form").serialize(),
+			method:"post",
+			success:function (response){
+				alert("Form submitted successfully")
+				window.location.reload()
+				//window.location.href="https://google.com"
+			},
+			error:function (err){
+				alert("Something Error")
 
+			}
+		})
+	})
+</script>
 </body>
 </html>
